@@ -1,0 +1,26 @@
+name: MinecraftCharms
+version: 1.0.0
+main: com.github.minecraftcharms.MinecraftCharms
+description: Implementing charms in Minecraft
+author: Kiron-Ang
+website: https://papermc.io
+api-version: '1.20'
+load: STARTUP
+prefix: MinecraftCharms
+permissions:
+    permission.node:
+        description: "This is a permission node"
+        default: op
+        children:
+            permission.node.child: true
+    another.permission.node:
+        description: "This is another permission node"
+        default: not op
+default-permission: true
+commands:
+    comm:
+        description: "This is a command"
+        usage: "/comm <arg>"
+        aliases: [cmd, command]
+        permission: permission.node
+        permission-message: "You do not have permission to use this command"
