@@ -26,9 +26,7 @@ replay_pid*
 # "mvn package" creates this directory:
 target/
 
-# "mvn package" creates these files:
+# "mvn package" creates this file:
 dependency-reduced-pom.xml
-*.jar
-*.class
 
 # Please feel free to add anything else here!
