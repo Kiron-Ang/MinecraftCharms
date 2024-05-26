@@ -1,13 +1,1 @@
-charms:
-  charm_one:
-    name:
-    lore:
-    item: ACACIA_BOAT
-    custom_model:
-    effect:
-  charm_two:
-    name:
-    lore:
-    item:
-    custom_model:
-    effect:
+item: IRON_INGOT
