@@ -1,5 +1,5 @@
 # minecraft-charms
-This repository contains Java code for a 1.20 minecraft server plugin to add custom charms.
+This repository contains Java code for a Paper 1.20.6 (Build #112) Minecraft server plugin to add custom charms.
 
 ## What the project does
 
