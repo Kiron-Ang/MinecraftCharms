@@ -1,26 +1,29 @@
 charms:
   charm_one:
     material: IRON_INGOT
-    name:
-    lore:
+    name: Test
+    lore: Test
     effects:
-      type:
-      duration:
-      amplifier:
+      effect_one:
+        type: STRENGTH
+        amplifier: 6
+      effect_two:
+        type: SPEED
+        amplifier: 8
   charm_two:
     material: APPLE
-    name:
-    lore:
+    name: Test
+    lore: Test
     effects:
-      type:
-      duration:
-      amplifier:
+      effect_one:
+        type:
+        amplifier:
   charm_three:
     material: SEA_LANTERN
-    name:
-    lore:
+    name: Test
+    lore: Test
     effects:
-      type:
-      duration:
-      amplifier:
+      effect_one:
+        type:
+        amplifier:
   

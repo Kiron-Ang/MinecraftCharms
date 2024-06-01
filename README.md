@@ -5,6 +5,10 @@ This repository contains Java code for a Paper 1.20.6 (Build #112) Minecraft ser
 
 Charms are items that, when placed in the nine slots in a player's hotbar, confer potion effects continuously to that player. This plugin implements charms for Minecraft servers and allows for the addition of custom charms.
 
+All charms must have a custom name and lore. Use the ``/give`` command in minecraft to give yourself a charm after specifying its details in the ``config.yml`` file.
+
+As an example, if you want to give yourself an iron ingot named "Test" with the lore text "Test", you could run this command in-game: ``/give @s minecraft:iron_ingot[minecraft:custom_name="Test",minecraft:lore=[Test]] 1``
+
 ## Why the project is useful
 
 Currently, no plugins implement charms or charm-like items in an easy way. Server staff can achieve the same effect with other plugins, but only after cumbersome changes.

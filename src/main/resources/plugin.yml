@@ -4,6 +4,6 @@ main: com.github.minecraftcharms.MinecraftCharms
 description: Implementing charms in Minecraft
 author: Kiron-Ang
 website: https://github.com/Kiron-Ang/minecraft-charms
-api-version: '1.20.6-R0.1-SNAPSHOT'
+api-version: '1.20'
 load: STARTUP
 prefix: MinecraftCharms
