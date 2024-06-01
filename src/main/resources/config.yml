@@ -1,0 +1,26 @@
+charms:
+  charm_one:
+    material: IRON_INGOT
+    name:
+    lore:
+    effects:
+      type:
+      duration:
+      amplifier:
+  charm_two:
+    material: APPLE
+    name:
+    lore:
+    effects:
+      type:
+      duration:
+      amplifier:
+  charm_three:
+    material: SEA_LANTERN
+    name:
+    lore:
+    effects:
+      type:
+      duration:
+      amplifier:
+  

@@ -15,6 +15,9 @@ import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import org.bukkit.configuration.ConfigurationSection;
+import java.util.Set;
+
 public class MinecraftCharms extends JavaPlugin {
 
   private BukkitTask task;
@@ -43,11 +46,24 @@ public class MinecraftCharms extends JavaPlugin {
     getServer().getConsoleSender().sendMessage("DisabledMinecraftCharms");
   }
 
+  // Check if any of the players on the server have a charm in their
+  // hotbar. This currently requires three for loops. Although I see
+  // that optimizing this is important, I am struggling to find a 
+  // way to remove the correct potion effect with removing effects
+  // that players might get from other means like regular potions.
+  // So, I currently rely on running this function constantly on a timer
   private void checkCharms() {
+    // Get the names of the charms only once
+    Set<String> keys = getConfig().getConfigurationSection(
+                                  "charms").getKeys(false);
     for (Player player : Bukkit.getOnlinePlayers()) {
-      player.sendMessage("Giving you a potion effect...");
-      player.addPotionEffect(new PotionEffect(
-                             PotionEffectType.STRENGTH, 100, 4));
+      for (int slot = 0; slot < 9; slot++) {
+        player.sendMessage("Looking at slot " + slot);
+        for (String charm : keys) {
+          player.sendMessage("Seeing if you have charm " + charm);
+
+        }
+      }
     }
   }
 
