@@ -1,69 +1,55 @@
 package com.github.minecraftcharms;
 
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryCloseEvent;
-import org.bukkit.event.player.PlayerPickupItemEvent;
-import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.entity.HumanEntity;
-import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class MinecraftCharms extends JavaPlugin implements Listener {
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitTask;
 
-    @Override
-    public void onLoad() {
-        getServer().getConsoleSender().sendMessage("MinecraftCharms has been loaded!");
-    }
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
-    @Override
-    public void onEnable() {
-        getServer().getPluginManager().registerEvents(this, this);
-        saveResource("config.yml", /* replace */ false);
-        getServer().getConsoleSender().sendMessage("MinecraftCharms has been enabled!");
-    }
+public class MinecraftCharms extends JavaPlugin {
 
-    @Override
-    public void onDisable() {
-        getServer().getConsoleSender().sendMessage("MinecraftCharms has been disabled!");
-    }
+  private BukkitTask task;
 
-    public void checkCharms(HumanEntity humanEntity) {
-        PlayerInventory playerInventory = humanEntity.getInventory();
-        for (int slot = 0; slot < 9; slot++) {
-            ItemStack itemStack = playerInventory.getItem(slot);
-            if (itemStack == null) {
-                continue;
-            }
-            String string = itemStack.getType().toString().strip();
-            String charm = getConfig().getString("item").strip();
-            humanEntity.sendMessage(string);
-            humanEntity.sendMessage(charm);
-            if (string.equals(charm)) {
-                humanEntity.sendMessage("You have a charm!");
-            } else {
-                humanEntity.sendMessage("You don't have a charm!"); 
-            }
-        }
-    }
+  // Called when the plugin is loaded
+  @Override
+  public void onLoad() {
+    getServer().getConsoleSender().sendMessage("Loaded MinecraftCharms");
+  }
 
-    @EventHandler
-    public void inventoryClose(InventoryCloseEvent event) {
-        HumanEntity humanEntity = event.getPlayer();
-        checkCharms(humanEntity);
-    }
+  // Called when the plugin is enabled after loading
+  @Override
+  public void onEnable() {
+    saveResource("config.yml", false);
 
-    @EventHandler
-    public void pickupItem(PlayerPickupItemEvent event) {
-        HumanEntity humanEntity = event.getPlayer();
-        checkCharms(humanEntity);
-    }
+    task = Bukkit.getScheduler().runTaskTimer(
+                                       this, this::checkCharms, 0L, 200L);
 
-    @EventHandler
-    public void dropItem(PlayerDropItemEvent event) {
-        HumanEntity humanEntity = event.getPlayer();
-        checkCharms(humanEntity);
+    getServer().getConsoleSender().sendMessage("Enabled MinecraftCharms");
+  }
+
+  // Called when the server stops and the plugin is disabled
+  @Override
+  public void onDisable() {
+    task.cancel();
+    getServer().getConsoleSender().sendMessage("DisabledMinecraftCharms");
+  }
+
+  private void checkCharms() {
+    for (Player player : Bukkit.getOnlinePlayers()) {
+      player.sendMessage("Giving you a potion effect...");
+      player.addPotionEffect(new PotionEffect(
+                             PotionEffectType.STRENGTH, 100, 4));
     }
+  }
+
+
 }
