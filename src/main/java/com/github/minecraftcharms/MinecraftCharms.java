@@ -23,6 +23,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.Command;
 
+import org.bukkit.Material;
+
+import java.util.List;
+import java.util.ArrayList;
+
 // Declare the main class of this file
 public class MinecraftCharms extends JavaPlugin
 implements CommandExecutor {
@@ -48,9 +53,29 @@ implements CommandExecutor {
   @Override
   public boolean onCommand(CommandSender s, Command c, String l, 
                            String[] a) {
+    
+    List<String> loreList = new ArrayList<String>();
     if (s instanceof Player) {
       Player player = (Player) s;
-      player.sendMessage("SUCCESS!!");
+      
+      // Get set of charms in config.yml
+      Set<String> charms = getConfig().getConfigurationSection("charms"
+                           ).getKeys(false);
+
+      // Loop through and give charms to player
+      for (String charm : charms) {
+        ItemStack charmStack = new ItemStack(Material.matchMaterial(
+                               getConfig().getString("charms." + charm + 
+                               ".material")));
+        ItemMeta charmMeta = charmStack.getItemMeta();
+        charmMeta.setDisplayName(getConfig().getString("charms." +
+          charm + ".name"));
+        loreList.clear();
+        loreList.add(getConfig().getString("charms." + charm + ".lore"));
+        charmMeta.setLore(loreList);
+        charmStack.setItemMeta(charmMeta);
+        player.getInventory().addItem(charmStack);
+      }
     }
     return true;
   }
