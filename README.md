@@ -9,6 +9,10 @@ All charms must have a custom name and lore. Use the ``/give`` command in minecr
 
 As an example, if you want to give yourself an iron ingot named "Test" with the lore text "Test", you could run this command in-game: ``/give @s minecraft:iron_ingot[minecraft:custom_name="Test",minecraft:lore=[Test]] 1``
 
+List of Potion Effects: hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
+
+List of Materials: hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+
 ## Why the project is useful
 
 Currently, no plugins implement charms or charm-like items in an easy way. Server staff can achieve the same effect with other plugins, but only after cumbersome changes.

@@ -7,3 +7,9 @@ website: https://github.com/Kiron-Ang/minecraft-charms
 api-version: '1.20'
 load: STARTUP
 prefix: MinecraftCharms
+commands:
+  charms:
+    description: Give yourself all available charms.
+    permission: minecraftcharms.charms
+    permission-message: You do not have permission to use this command.
+    usage: Just type "/charms".

@@ -1,5 +1,7 @@
+// Specify package that this file belongs to
 package com.github.minecraftcharms;
 
+// Import lots of relevant classes
 import org.bukkit.plugin.java.JavaPlugin;
 
 import org.bukkit.Bukkit;
@@ -17,7 +19,13 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class MinecraftCharms extends JavaPlugin {
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.command.Command;
+
+// Declare the main class of this file
+public class MinecraftCharms extends JavaPlugin
+implements CommandExecutor {
 
   // Called when the plugin is enabled after loading
   @Override
@@ -33,17 +41,29 @@ public class MinecraftCharms extends JavaPlugin {
     // 20 ticks is 1 second and the data type is "long" 
     BukkitTask task = Bukkit.getScheduler().runTaskTimer(this, 
                       this::checkCharms, 0L, 100L);
+    this.getCommand("charms").setExecutor(this);
+  }
+
+
+  @Override
+  public boolean onCommand(CommandSender s, Command c, String l, 
+                           String[] a) {
+    if (s instanceof Player) {
+      Player player = (Player) s;
+      player.sendMessage("SUCCESS!!");
+    }
+    return true;
   }
 
   private void checkCharms() {
 
+    // Initialize variables so compiler does not throw a fit
     String material;
     String name;
     String lore;
     String charm_material;
     String charm_name;
     String charm_lore;
-
 
     // Get a set of the charms in the config
     // this can be iterated over later on to get traits of each charm
@@ -88,8 +108,6 @@ public class MinecraftCharms extends JavaPlugin {
               name.equals(charm_name) &&
               lore.equals(charm_lore)) {
 
-            player.sendMessage("You have a charm");
-
             // Create a string based on the current charm
             String section = "charms." + charm + ".effects";
 
@@ -101,12 +119,11 @@ public class MinecraftCharms extends JavaPlugin {
             for (String effect : effects) {
               String e_type = getConfig().getString(section + "." +
                                    effect + ".type");
-
               String amplifier = getConfig().getString(section + "." +
                                  effect + ".amplifier");
-              
               PotionEffectType pet = PotionEffectType.getByName(e_type);
               int amp = Integer.parseInt(amplifier);
+
             // Duration for potion effects will always be 20 ticks more
             // than the BukkitTask interval
             player.addPotionEffect(new PotionEffect(pet, 120, amp));

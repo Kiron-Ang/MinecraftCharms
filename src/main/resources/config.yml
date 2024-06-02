@@ -1,8 +1,8 @@
 charms:
   charm_one:
     material: IRON_INGOT
-    name: Test
-    lore: Test
+    name: Steel Power
+    lore: Not sure what to say about this...
     effects:
       effect_one:
         type: STRENGTH
@@ -12,18 +12,24 @@ charms:
         amplifier: 8
   charm_two:
     material: APPLE
-    name: Test
-    lore: Test
+    name: Death's Grace
+    lore: Reach high places and shorten your lifespan!
     effects:
       effect_one:
-        type:
-        amplifier:
+        type: HUNGER
+        amplifier: 11
+      effect_two:
+        type: BLINDNESS
+        amplifier: 3
+      effect_one:
+        type: JUMP_BOOST
+        amplifier: 15
   charm_three:
     material: SEA_LANTERN
-    name: Test
-    lore: Test
+    name: Sea Power
+    lore: Stay hydrated!
     effects:
       effect_one:
-        type:
-        amplifier:
+        type: ABSORPTION
+        amplifier: 25
   
