@@ -24,7 +24,8 @@ If you need help, please create an issue on the GitHub page for this project! Yo
 
 GOALS:
 
+- Add lore color code support; involves ``config.yml``
+- Add custom model support; involves ``config.yml``
+- Add option to make the items glow; involves ``config.yml``
 - Add more options for the ``/charms`` command: ``/charms (player name) (charm name)``
-- Add custom model support! Involves ``config.yml`` file
-- Add option to make the items glow! Involves ``config.yml`` file
 

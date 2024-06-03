@@ -2,7 +2,7 @@ charms:
   charm_one:
     material: IRON_INGOT
     name: Steel Power
-    lore: &4Not sure what to say about this...
+    lore: Not sure what to say about this...
     effects:
       effect_one:
         type: STRENGTH
