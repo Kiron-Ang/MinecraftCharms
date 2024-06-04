@@ -1,5 +1,5 @@
 # minecraft-charms
-This repository contains Java code for a Paper 1.20.6 (Build #134) Minecraft server plugin to add custom charms.
+This repository contains Java code for a Paper 1.20.6 (Build #136) Minecraft server plugin to add custom charms.
 
 ## What the project does
 Charms are items that, when placed in the nine slots in a player's hotbar, confer potion effects continuously to that player. This plugin implements charms for Minecraft servers and allows for the addition of custom charms.
