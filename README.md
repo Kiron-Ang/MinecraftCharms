@@ -1,10 +1,12 @@
 # minecraft-charms
-This repository contains Java code for a Paper 1.20.6 (Build #136) Minecraft server plugin to add custom charms.
+This repository contains Java code for a Paper 1.20.6 (Build #138) Minecraft server plugin to add custom charms.
 
 ## What the project does
 Charms are items that, when placed in the nine slots in a player's hotbar, confer potion effects continuously to that player. This plugin implements charms for Minecraft servers and allows for the addition of custom charms.
 
 All charms must have a custom name and lore. Define those in the ``config.yml`` file and run the command ``/charms`` in-game to add all available charms to your inventory. Below are some links that are useful for people that want to add new charms or edit this plugin themselves with Java programming:
+
+For formatting names and lore with formatting codes, please refer to this article: https://minecraft.fandom.com/wiki/Formatting_codes
 
 - Potion Effects List: hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
 - Materials List: hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
@@ -24,8 +26,6 @@ If you need help, please create an issue on the GitHub page for this project! Yo
 
 GOALS:
 
-- Add lore color code support; involves ``config.yml``
-- Add custom model support; involves ``config.yml``
 - Add option to make the items glow; involves ``config.yml``
+- Add custom model support; involves ``config.yml``
 - Add more options for the ``/charms`` command: ``/charms (player name) (charm name)``
-
