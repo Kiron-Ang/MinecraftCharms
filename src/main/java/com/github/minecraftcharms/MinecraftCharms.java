@@ -43,12 +43,20 @@ implements CommandExecutor {
   @Override
   public boolean onCommand(CommandSender s, Command c, String l,
                            String[] a) {
+    // Test to make sure that two arguments were given
+    if (args.length != 2) {
+      s.sendMessage("Please try again: /charms <PLAYER> <CHARM>")
+      return true;
+    }
     // Initialize an empty list since ItemMeta lores are stored in a list
     List<String> loreList = new ArrayList<String>();
     // Only run the rest of this code if the sender is a player
     if (s instanceof Player) {
-      // Get the CommandSender "s" and ensure it is an instance of Player
-      Player player = (Player) s;
+      // Get the arguments passed to the command
+      String playerName = a[0];
+      String charmName = a[1];
+      // Use playerName to get the Player object
+      Player player = Bukkit.getServer().getPlayer(playerName);
       // Initialize a set based off of the "keys" in the config.yml file
       // This basically gets all of the words indented one level below the
       // "charms:" section in the config.yml file
@@ -56,6 +64,8 @@ implements CommandExecutor {
                            ).getKeys(false);
       // For every single charm mentioned in the config, run this code
       for (String charm : charms) {
+        // See if the charmName matches a charm in the config
+        if (!charm.equals(charmName)) {continue;}
         // Initialize a new ItemStack with just the material specified
         // in the config. This will be further modified
         // TODO: There may be a more efficient way to organize all this
@@ -76,10 +86,20 @@ implements CommandExecutor {
         loreList.add(getConfig().getString("charms." + charm + ".lore"));
         // Set lore based off of the list initialized before.
         charmMeta.setLore(loreList);
+        // Add a hidden enchantment if "glow" is "true"
+        if (getConfig().getString("charms." + charm + ".glow").equals("true")) {
+          // Protection is only useful on armor and infinity is only
+          // useful on bows, so put that enchantment on the item
+          charmStack.addEnchantment((itemStack.getType() == Material.BOW) ? 
+          Enchantment.PROTECTION_ENVIRONMENTAL : Enchantment.ARROW_INFINITE, 1);
+          // Hide enchantments to make things cleaner
+          charmMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        }
         // Now take the entire ItemMeta instance and add it back
         charmStack.setItemMeta(charmMeta);
         // Give the player than ran "/charms" the item!
         player.getInventory().addItem(charmStack);
+
       }
     }
     // I need to return "true" or else the server will return an error
