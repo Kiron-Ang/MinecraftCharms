@@ -3,33 +3,36 @@ charms:
     material: IRON_INGOT
     name: Steel Power
     lore: §4Not sure what to say about this...
+    glow: true
     effects:
-      effect_one:
+      strength:
         type: STRENGTH
         amplifier: 6
-      effect_two:
+      speed:
         type: SPEED
         amplifier: 8
   charm_two:
     material: APPLE
-    name: Death's Grace
+    name: §7Death's Grace
     lore: Reach high places and shorten your lifespan!
+    glow: true
     effects:
-      effect_one:
+      hunger:
         type: HUNGER
-        amplifier: 11
-      effect_two:
+        amplifier: 6
+      blindness:
         type: BLINDNESS
         amplifier: 3
-      effect_one:
+      jump_boost:
         type: JUMP_BOOST
         amplifier: 15
   charm_three:
     material: SEA_LANTERN
     name: Sea Power
     lore: Stay hydrated!
+    glow: false
     effects:
-      effect_one:
+      absorption:
         type: ABSORPTION
         amplifier: 25
   
