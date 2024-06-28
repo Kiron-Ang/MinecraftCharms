@@ -90,11 +90,8 @@ implements CommandExecutor {
         charmMeta.setLore(loreList);
         // Add a hidden enchantment if "glow" is "true"
         if (getConfig().getString("charms." + charm + ".glow").equals("true")) {
-          // Protection is only useful on armor and infinity is only
-          // useful on bows, so put that enchantment on the item
-          charmStack.addEnchantment(Enchantment.LOYALTY, 1);
-          // Hide enchantments to make things cleaner
-          charmMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+          // Add enchantment glint!
+          charmMeta.setEnchantmentGlintOverride(true);
         }
         // Now take the entire ItemMeta instance and add it back
         charmStack.setItemMeta(charmMeta);

@@ -1,5 +1,5 @@
 charms:
-  charm_one:
+  THIS_TEXT_IS_USED_FOR_THE_CHARMS_COMMAND:
     material: IRON_INGOT
     name: Steel Power
     lore: §4Not sure what to say about this...
@@ -26,7 +26,7 @@ charms:
       jump_boost:
         type: JUMP_BOOST
         amplifier: 15
-  charm_three:
+  sea_power:
     material: SEA_LANTERN
     name: Sea Power
     lore: Stay hydrated!

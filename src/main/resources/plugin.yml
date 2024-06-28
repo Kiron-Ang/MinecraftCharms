@@ -8,7 +8,7 @@ load: STARTUP
 prefix: MinecraftCharms
 commands:
   charms:
-    description: Give a player a charm.
+    description: Give a player a charm. See config.yml for available charms.
     permission: minecraftcharms.charms
     permission-message: You cannot use this command.
-    usage: /charms <PLAYER> <CHARM>
+    usage: /charms <PLAYER> <NAME_OF_CHARM>
