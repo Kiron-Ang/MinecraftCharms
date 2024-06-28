@@ -3,7 +3,7 @@ version: 1
 main: com.github.minecraftcharms.MinecraftCharms
 description: Implementing Charms in Minecraft
 author: Kiron-Ang
-website: https://github.com/Kiron-Ang/MinecraftGlass
+website: https://github.com/Kiron-Ang/MinecraftCharms
 load: STARTUP
 prefix: MinecraftCharms
 commands:
@@ -11,4 +11,4 @@ commands:
     description: Give a player a charm. See config.yml for available charms.
     permission: minecraftcharms.charms
     permission-message: You cannot use this command.
-    usage: /charms <PLAYER> <NAME_OF_CHARM>
+    usage: /charms <PLAYER> <NAME_OF_CHARM_IN_CONFIG>
