@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.minecraftcharms</groupId>
   <artifactId>MinecraftCharms</artifactId>
-  <version>0</version>
+  <version>1</version>
   <repositories>
     <repository>
       <id>papermc</id>

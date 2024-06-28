@@ -1,9 +1,9 @@
 name: MinecraftCharms
-version: 0
+version: 1
 main: com.github.minecraftcharms.MinecraftCharms
 description: Implementing Charms in Minecraft
 author: Kiron-Ang
-website: https://github.com/Kiron-Ang/minecraft-charms
+website: https://github.com/Kiron-Ang/MinecraftGlass
 load: STARTUP
 prefix: MinecraftCharms
 commands:
