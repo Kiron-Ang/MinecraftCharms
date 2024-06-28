@@ -18,6 +18,8 @@ import org.bukkit.command.Command;
 import org.bukkit.Material;
 import java.util.List;
 import java.util.ArrayList;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemFlag;
 
 // All plugins need to extend JavaPlugin
 // Implement CommandExecutor for the /charms command
@@ -44,8 +46,8 @@ implements CommandExecutor {
   public boolean onCommand(CommandSender s, Command c, String l,
                            String[] a) {
     // Test to make sure that two arguments were given
-    if (args.length != 2) {
-      s.sendMessage("Please try again: /charms <PLAYER> <CHARM>")
+    if (a.length != 2) {
+      s.sendMessage("Please try again: /charms <PLAYER> <CHARM>");
       return true;
     }
     // Initialize an empty list since ItemMeta lores are stored in a list
@@ -90,8 +92,7 @@ implements CommandExecutor {
         if (getConfig().getString("charms." + charm + ".glow").equals("true")) {
           // Protection is only useful on armor and infinity is only
           // useful on bows, so put that enchantment on the item
-          charmStack.addEnchantment((itemStack.getType() == Material.BOW) ? 
-          Enchantment.PROTECTION_ENVIRONMENTAL : Enchantment.ARROW_INFINITE, 1);
+          charmStack.addEnchantment(Enchantment.LOYALTY, 1);
           // Hide enchantments to make things cleaner
           charmMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         }

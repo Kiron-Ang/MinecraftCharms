@@ -1,4 +1,5 @@
 <project>
+  <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.minecraftcharms</groupId>
   <artifactId>MinecraftCharms</artifactId>
   <version>0</version>
