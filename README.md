@@ -1,3 +1,3 @@
 # MinecraftCharms
 
-This Minecraft server plugin adds Charms for players to use. If you need help with this plugin, please contact Kiron Ang at angk@uab.edu
+This repository contains Java code for a 1.21 Minecraft server plugin.
