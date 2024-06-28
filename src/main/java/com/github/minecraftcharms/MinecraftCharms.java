@@ -18,8 +18,6 @@ import org.bukkit.command.Command;
 import org.bukkit.Material;
 import java.util.List;
 import java.util.ArrayList;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.inventory.ItemFlag;
 
 // All plugins need to extend JavaPlugin
 // Implement CommandExecutor for the /charms command
