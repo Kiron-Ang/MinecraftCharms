@@ -1,5 +1,5 @@
 # MinecraftCharms
 
-This repository contains Java code for a 1.21 Minecraft server plugin.
+Use Java to create a plugin for Paper Minecraft servers.
 
 Current Plugin Version: Version 1
