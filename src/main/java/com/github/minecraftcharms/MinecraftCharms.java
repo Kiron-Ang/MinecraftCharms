@@ -15,6 +15,8 @@ import org.bukkit.command.Command;
 import org.bukkit.Material;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
+import org.bukkit.entity.HumanEntity;
 
 public class MinecraftCharms extends JavaPlugin {
   @Override
