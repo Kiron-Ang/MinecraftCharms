@@ -1,14 +1,13 @@
 name: MinecraftCharms
 version: 1
 main: com.github.minecraftcharms.MinecraftCharms
-description: Implementing Charms in Minecraft
-author: Kiron-Ang
-website: https://github.com/Kiron-Ang/MinecraftCharms
-load: STARTUP
-prefix: MinecraftCharms
+description: Implementing charms in Minecraft!
+author: Menou
+website: https://hangar.papermc.io/Menou/MinecraftCharms
+api-version: 1.21
 commands:
   charms:
     description: Give a player a charm. See config.yml for available charms.
     permission: minecraftcharms.charms
     permission-message: You cannot use this command.
-    usage: /charms <PLAYER> <NAME_OF_CHARM_IN_CONFIG>
+    usage: /charms <PLAYER> <NAME_OF_CHARM_IN_CONFIG> OR /charms reload

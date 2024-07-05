@@ -1,5 +1,5 @@
 charms:
-  THIS_TEXT_IS_USED_FOR_THE_CHARMS_COMMAND:
+  steel_power:
     material: IRON_INGOT
     name: Steel Power
     lore: §4Not sure what to say about this...
@@ -11,7 +11,7 @@ charms:
       speed:
         type: SPEED
         amplifier: 8
-  charm_two:
+  death_grace:
     material: APPLE
     name: §7Death's Grace
     lore: Reach high places and shorten your lifespan!
